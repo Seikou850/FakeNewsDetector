@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<HTML>
+<head>
+<title> FAKE NEWS DETECTOR </title>
+   <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+<body background="background2.jpg">
+
+<div style="float:left;width:100px;height:100px;">
+<img src="logo4.svg" class="logo_page"/>
+ </div>
+<div style="float:left;width:400px;text-align:left;">
+     <h1>FAKE NEWS DETECTOR </h1>
+</div>
+<div style="clear:both"></div>
+</div>
+
+
+<div id="nav">
+			 <div class="topnav">
+			<a href="FAKE.NEWS 1.html">FAKE NEWS HOME</a>
+		    <a href="DISCOVER.html">DISCOVER</a>
+			<a href="BOOK.html">CONTACT US</a>
+			<a href="MANAGE.html">ARTICLE</a>
+			<a href="LOGINOUT.html">SIGN OUT</a>
+			</div>
+			
+			
+			
+			
+            <video poster="Background720.mp4" id="bgvid" playsinline autoplay muted loop>
+              <!--
+            - Video needs to be muted, since Chrome 66+ will not autoplay video with sound.
+            WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+              <br>
+              <video width="1000" height="400" controls>
+                <source src="movie.mp4" type="video/mp4">
+              </video>
+
+            </video>
+            <div id="polina">
+            <h1><center>FAKE NEWS DETECTOR </center></h1>
+            <h3><center>HOW TO FIGHT THE FAKE NEWS?</center></h3>
+            <p><a href="FAKE.NEWS 1.html">BACK TO HOME PAGE</a>
+            
+            <p>Fighting fake news is simple: you just have to use common sense.
+            
+            There are a series of checks that you can easily carry out and that will allow you to confirm the veracity of information: the date it was published, if there are spelling mistakes or errors in the text, if the images are pixelated or seem retouched ...
+
+            Another aspect to take into account is the source of information: is it a recognized newspaper, an official web portal or a blog with few followers? If you are not sure, it is better to contrast the information with other more reliable means.</p>
+            
+            <p>The most important thing is to read the information with a critical eye, knowing that not everything that is published on the internet is real. Before posting or sharing information, make sure it is true and reflect on the consequences it could have.</p>
+            <button>Pause</button>
+            </div>
+            
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            <iframe width="825" height="645" src="https://www.youtube.com/embed/7uflK6MbGDo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </br>
+
+
+<style>
+
+#header{
+height:125px;
+width:90%;
+padding:5px;
+background-color:#666666;
+}
+.topnav{
+}
+
+.topnav a{ 
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+.search{
+	float:right;
+}
+
+.topnav a:hover{
+background-color: #ddd;
+color: black;
+}
+.topnav a.active{
+background-color: #4CAF50;
+Color: white;
+}
+#content{ width:300px;
+float:right;}
+
+.main{
+background-color:;
+}
+.clear{float:none;
+clear:both;}
+.mybooking{ width:300px;
+float:left;}
+
+
+
+</style>
+
+
+<style>
+
+
+    video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+     background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+      background-size: cover;
+      transition: 1s opacity;
+    }
+    .stopfade {
+       opacity: .5;
+    }
+
+    #polina {
+      font-weight:100;
+      background: rgba(0,0,0,0.3);
+      color: white;
+      padding: 2rem;
+      width: 33%;
+      margin:2rem;
+      float: right;
+      font-size: 1.2rem;
+    }
+ 
+    
+   #polina button {
+      display: block;
+      width: 80%;
+      padding: .4rem;
+      border: none;
+      margin: 1rem auto;
+      font-size: 1.3rem;
+      background: rgba(255,255,255,0.23);
+      color: #fff;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: .3s background;
+    }
+    #polina button:hover {
+       background: rgba(0,0,0,0.5);
+    }
+
+    a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      background:rgba(0,0,0,0.5);
+      padding: .5rem;
+      transition: .6s background;
+    }
+    a:hover{
+      background:rgba(0,0,0,0.9);
+    }
+    @media screen and (max-width: 500px) {
+      div{width:70%;}
+    }
+    @media screen and (max-device-width: 800px) {
+      html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+      #bgvid { display: none; }
+    }
+
+
+</style>
+
+<script>
+    var vid = document.getElementById("bgvid");
+    var pauseButton = document.querySelector("#polina button");
+
+    if (window.matchMedia('(prefers-reduced-motion)').matches) {
+        vid.removeAttribute("autoplay");
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+    }
+
+    function vidFade() {
+      vid.classList.add("stopfade");
+    }
+
+    vid.addEventListener('ended', function()
+    {
+    // only functional if "loop" is removed
+    vid.pause();
+    // to capture IE10
+    vidFade();
+    });
+
+
+    pauseButton.addEventListener("click", function() {
+      vid.classList.toggle("stopfade");
+      if (vid.paused) {
+        vid.play();
+        pauseButton.innerHTML = "Pause";
+      } else {
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+      }
+    })
+
+
+</script>
+
+
+</style>
+
+<br>
+</br>
+
+
+<!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About Me</h6>
+            <p class="text-justify">I am Seikou a student at City of Westminster College and I make this website to DETECT FAKE NEWS that circulate in social media and internet. This website is made to combat the information that circulates around us. WHAT ARE FAKE NEWS? Fake news deliberately spreads false information. They try to attract attention with supposedly (authentic) content to shock and manipulate public opinion. This type of news is created by both individuals and groups, acting in their own interest or on behalf of others. The spread of disinformation has primarily personal, political or economic objectives.</p>
+</div>
+<hr>
+</div>
+<div class="container">
+<div class="col-md-8 col-sm-6 col-xs-12">
+<p align="left">Copyright &copy; 2021 All Rights Reserved by FAKE NEWS DETECTOR
+</p>
+</div>
+
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa {
+  padding: 15px;
+  font-size: 25px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+
+</style>
+</head>
+<body>
+
+<!-- Add font awesome icons -->
+<a href="https://en-gb.facebook.com/" class="fa fa-facebook"></a>
+<a href="https://twitter.com/login?lang=en" class="fa fa-twitter"></a>
+<a href="https://www.google.com/" class="fa fa-google"></a>
+<a href="https://www.linkedin.com/" class="fa fa-linkedin"></a>
+<a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+<a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+<a href="https://www.pinterest.co.uk/" class="fa fa-pinterest"></a>
+
+      
+</body>
+</html>
+          
+</footer>
+
+
+<style>
+
+.site-footer
+{
+  background-color:#5c561e;
+  font-size:18px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:10px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+
+</style>
+      </div>
+</footer>
+
+<style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  
+}
+
+.left {
+  display: block;
+  margin-left: left-top;
+  margin-right: auto;
+  width: 20%;
+}
+
+#header{
+height:125px;
+width:100%;
+padding:5px;
+background-color:#666666;
+}
+.topnav{
+}
+
+.search{
+    float:right;
+}
+
+.topnav a:hover{
+background-color: #ddd;
+color: black;
+}
+.topnav a.active{
+background-color: #4CAF50;
+Color: white;
+}
+#content{ width:300px;
+float:right;}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.footer-links a {
+float: none;
+color: #f2f2f2;
+text-align: left;
+padding: 0px 0px;
+text-decoration: none;
+ 
+}
+
+.site-footer {
+float: left;
+text-align: left;
+
+
+.main{
+background-color:;
+}
+.clear{float:none;
+clear:both;}
+.mybooking{ width:300px;
+float:left;}
+
+}
+
+.footer-links a {
+float: none;
+color: #f2f2f2;
+text-align: left;
+padding: 0px 0px;
+text-decoration: none;
+ 
+}
+
+.site-footer
+{
+  background-color:#26272b;
+  
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+
+
+* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+tent:'\f1cb';
+}
+
+</style>
+
